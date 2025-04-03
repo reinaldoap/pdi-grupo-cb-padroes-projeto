@@ -11,5 +11,4 @@ Console.WriteLine("-------------------------");
 
 Console.WriteLine("2: Exemplo de Abstract Factory");
 ExemploAbstractFactory exemplo = new ExemploAbstractFactory();
-exemplo.ExecutarExemploFabricaElastic();
-exemplo.ExecutarExemploFabricaSolr();
+exemplo.Executar();

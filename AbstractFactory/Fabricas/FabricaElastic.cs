@@ -3,9 +3,18 @@ namespace Pdi.PadroesProjeto.AbstractFactory.Fabricas
 {
     internal class FabricaElastic : IFabricaProdutoAbstrata
     {
-        public IProdutoAbstrato CriarProduto(int id, string nome, List<string> skus, decimal preco)
+        public IProduto AdicionarSku(IProduto produto, string codigoSku, string rotulo)
         {
-            return new ProdutoElastic(id, nome, skus, preco);
+            if(produto.Skus == null)
+                produto.Skus = new List<ISku>();
+
+            produto.Skus.Add(new SkuElastic(codigoSku, rotulo));
+            return produto;
+        }
+
+        public IProduto CriarProduto(int id, string nome, decimal preco)
+        {
+            return new ProdutoElastic(id, nome, preco);
         }
     }
 }

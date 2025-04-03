@@ -2,11 +2,13 @@
 
 namespace Pdi.PadroesProjeto.AbstractFactory
 {
-    internal interface IProdutoAbstrato
+    internal interface IProduto
     {
         int Id { get; }
         string Nome { get; }
-        List<string> Skus { get; }
+        List<ISku> Skus { get; set; }
         decimal Preco { get; }
+
+        void EnviarParaIndexacao();
     }
 }
